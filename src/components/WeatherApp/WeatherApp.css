@@ -1,0 +1,177 @@
+/* src/components/WeatherApp/WeatherApp.module.css */
+
+.container {
+  font-family: Arial, sans-serif;
+  min-width: 610px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f0f8ff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.search-box {
+  margin: 20px auto 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  max-width: 30vw;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  max-height: 40px;
+  flex: 1;
+}
+
+.input:focus  {
+  outline: none;
+}
+
+.button {
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: 16px;
+  background: #ffffff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #2a6389;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.card {
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 45%;
+}
+
+.current-weather {
+  background: rgba(248, 248, 252, 0.808);
+}
+
+.city-name {
+  font-size: 24px;
+  color: rgb(27, 74, 134);
+  margin: 0 0 10px 0;
+}
+
+.temp {
+  font-size: 48px;
+  font-weight: bold;
+  color: #440a54;
+  margin: 0 0 5px 0;
+}
+
+.description {
+  font-size: 18px;
+  color: #3e3845;
+  text-transform: capitalize;
+  margin: 0 0 15px 0;
+}
+
+.details {
+  font-size: 14px;
+  color: #3e3845;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 16px;
+}
+
+.info {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* Стили для контейнера прогноза */
+.forecast-container {
+  margin-top: 50px;
+}
+
+.forecast-title {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.forecast-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.forecast-item {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 5px;
+  border-radius: 10px;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  max-height: 90px;
+  max-width: 100px;
+}
+
+.forecast-item:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.forecast-date {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(27, 74, 134);
+  margin: 0 0 5px 0;
+}
+
+.forecast-temp {
+  font-size: 18px;
+  font-weight: bold;
+  color: #440a54;
+  margin: 0;
+}
+
+.forecast-desc {
+  font-size: 12px;
+  color: #3e3845;
+  margin: 5px 0 0 0;
+  text-transform: capitalize;
+}
+
+/* Стили для фонов (они уже были, но добавим для контейнера) */
+.container {
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease;
+  height: 80vh;
+  max-width: 50vw;
+  padding: 20px;
+}
+
+.bg-sunny { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/images/sunny.jpg'); }
+.bg-cloudy { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/images/cloudy.jpg'); }
+.bg-rainy { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/images/rainy.jpg'); }
+.bg-snowy { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/images/snowy.jpg'); }
+.bg-foggy { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/images/foggy.jpg'); }
+.bg-thunderstorm { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/images/thunderstorm.jpg'); }
