@@ -1,4 +1,3 @@
-// src/components/WeatherApp/WeatherApp.jsx
 import React, { useState, useEffect } from 'react';
 import './WeatherApp.css';
 
@@ -10,7 +9,7 @@ function WeatherApp() {
 
   const API_KEY = '1a37984684f49dde5f9914f80457e92e'; // ⬅️ НЕ ЗАБУДЬТЕ ВСТАВИТЬ ВАШ КЛЮЧ!
 
-  // --- 1. Функция для определения фона по коду погоды ---
+  // --- Функция для определения фона по коду погоды ---
   const getWeatherBackground = (weatherCode) => {
     // Коды погоды: https://openweathermap.org/weather-conditions
     if (weatherCode >= 200 && weatherCode < 300) return 'thunderstorm';
@@ -23,14 +22,14 @@ function WeatherApp() {
     return 'default';
   };
 
-  // --- 2. Функция запроса погоды и прогноза ---
+  // --- Функция запроса погоды и прогноза ---
   const fetchWeather = async () => {
     setLoading(true);
     setError('');
     setWeather(null);
 
     try {
-      // Шаг 1: Получаем координаты города
+      // Получаем координаты города
       const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
       const geoResponse = await fetch(geoUrl);
       const geoData = await geoResponse.json();
@@ -41,7 +40,7 @@ function WeatherApp() {
 
       const { lat, lon } = geoData[0];
 
-      // Шаг 2: Запрашиваем прогноз на 5 дней по координатам
+      // Запрашиваем прогноз на 5 дней по координатам
       const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
       const forecastResponse = await fetch(forecastUrl);
       const forecastData = await forecastResponse.json();
@@ -50,7 +49,7 @@ function WeatherApp() {
         throw new Error(forecastData.message || 'Ошибка получения прогноза');
       }
 
-      // Шаг 3: Группируем данные по дням (берем одну точку в день, на 12:00)
+      // Группируем данные по дням (берем одну точку в день, на 12:00)
       const dailyForecast = {};
       forecastData.list.forEach(item => {
         const date = item.dt_txt.split(' ')[0];
@@ -78,12 +77,12 @@ function WeatherApp() {
     }
   };
 
-  // --- 3. Запрос при первом запуске ---
+  // --- Запрос при первом запуске ---
   useEffect(() => {
     fetchWeather();
   }, []);
 
-  // --- 4. Отрисовка страницы ---
+  // --- Отрисовка страницы ---
   return (
     // Класс для фона формируется динамически: container + bg-sunny, bg-rainy и т.д.
     <div className={`container ${weather ? `bg-${getWeatherBackground(weather.current.weather[0].id)}` : ''}`}>
