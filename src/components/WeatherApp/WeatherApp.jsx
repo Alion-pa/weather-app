@@ -7,7 +7,7 @@ function WeatherApp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const API_KEY = '1a37984684f49dde5f9914f80457e92e'; // ⬅️ НЕ ЗАБУДЬТЕ ВСТАВИТЬ ВАШ КЛЮЧ!
+  const API_KEY = '1a37984684f49dde5f9914f80457e92e';
 
   // --- Функция для определения фона по коду погоды ---
   const getWeatherBackground = (weatherCode) => {
