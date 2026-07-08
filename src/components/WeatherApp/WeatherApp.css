@@ -1,5 +1,3 @@
-/* src/components/WeatherApp/WeatherApp.module.css */
-
 .container {
   font-family: Arial, sans-serif;
   min-width: 610px;
@@ -102,7 +100,6 @@
   font-size: 16px;
 }
 
-/* Стили для контейнера прогноза */
 .forecast-container {
   margin-top: 50px;
 }
@@ -159,7 +156,6 @@
   text-transform: capitalize;
 }
 
-/* Стили для фонов (они уже были, но добавим для контейнера) */
 .container {
   background-size: cover;
   background-position: center;
